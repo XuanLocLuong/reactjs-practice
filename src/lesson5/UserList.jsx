@@ -1,9 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import UserDetail from "./UserDetail";
+import ThemeContext from "../lesson6/ThemeContext";
 
 function UserList() {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
+
+    // Sử dụng useContext để lấy giá trị theme từ ThemeContext
+    const { theme } = useContext(ThemeContext);
 
     useEffect(() => {
         
@@ -30,7 +34,12 @@ function UserList() {
     }
 
     return (
-        <div>
+        <div
+            style={{
+                backgroundColor: theme === "dark" ? "#222" : "#fff",
+                color: theme === "dark" ? "#fff" : "#000",
+                padding: "20px",
+            }}>
             <h1>User List</h1>
             <ul>
                 {users.map(user => (

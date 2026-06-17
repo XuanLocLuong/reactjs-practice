@@ -1,5 +1,5 @@
 //create simple component
-const Bai1 = () => {
+const HelloWord = () => {
     return (
         <div>
             <h1>Hello, World!</h1>
@@ -7,4 +7,4 @@ const Bai1 = () => {
         </div>
     )
 }
-export default Bai1;
+export default HelloWord;

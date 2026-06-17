@@ -1,5 +1,5 @@
 //component with props
-function Bai2(props) {
+function UserCard(props) {
     const {name, avatarUrl, birthday} = props;
     return (
         <div>
@@ -9,4 +9,4 @@ function Bai2(props) {
         </div>
     )
 }
-export default Bai2;
+export default UserCard;

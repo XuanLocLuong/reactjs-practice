@@ -1,8 +1,11 @@
-import { useState } from "react";
+import {useContext, useState} from "react";
+import ThemeContext from "../lesson6/ThemeContext.jsx";
 
 function Pagination(props) {
     //lấy số trang tối đa từ props truyền vào, nếu không có thì mặc định là 10
     const {maxPage = 10} = props;
+
+    const {theme} = useContext(ThemeContext);
 
     //tạo state để lưu trang hiện tại, mặc định là 1 là trang đầu tiên
     const [currentPage, setCurrentPage] = useState(1);
@@ -22,7 +25,11 @@ function Pagination(props) {
     };
 
     return (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginTop: '20px' }}>
+        <div style={{
+            backgroundColor: theme === "dark" ? "#333" : "#f9f9f9",
+            color: theme === "dark" ? "#fff" : "#000",
+            display: 'flex', alignItems: 'center', gap: '15px', marginTop: '20px',
+        }}>
             {/* Nút Previous: tự động bị disabled khi đang ở trang 1 */}
             <button 
                 onClick={handlePrevious} 

@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import ThemeContext from "../lesson6/ThemeContext";
 import { useNavigate, useParams } from "react-router-dom";
-import { fetchUserById } from "../lesson5/UserApi";
-import UserCard from "./UserCard";
+import { fetchUserById } from "./UserApi.jsx";
+import UserCard from "../lesson2/UserCard.jsx";
 
-function UserDetail() {
+function UserDetailPage() {
 
     // Sử dụng useParams để lấy tham số id từ URL
     const {id} = useParams();
@@ -34,8 +34,8 @@ function UserDetail() {
             <button onClick={() => navigate("/users")} style={{ marginBottom: "10px" }}>
                 Back to Users
             </button>
-            <UserCard name={user.name} email={user.email} phone={user.phone} theme={theme} />
+            <UserCard name={user.name} email={user.email} phone={user.phone}/>
         </div>
     )
 }
-export default UserDetail;
+export default UserDetailPage;

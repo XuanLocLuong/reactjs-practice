@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from "react";
-import UserDetail from "./UserDetail";
 import ThemeContext from "../lesson6/ThemeContext";
 
 function UserList() {
+    //lưu trạng thái của user
     const [users, setUsers] = useState([]);
+    //lưu trạng thái của loading
     const [loading, setLoading] = useState(true);
 
     // Sử dụng useContext để lấy giá trị theme từ ThemeContext
@@ -44,7 +45,8 @@ function UserList() {
             <ul>
                 {users.map(user => (
                     <li key={user.id}>
-                        <UserDetail name={user.name} email={user.email} phone={user.phone} />
+                        {/*<UserDetail name={user.name} email={user.email} phone={user.phone} />*/}
+                        Name: {user.name}
                     </li>
                 ))}
             </ul>

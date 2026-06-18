@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import ThemeContext from "../lesson6/ThemeContext";
 import { useNavigate } from "react-router-dom";
-import { fetchUsers } from "../lesson5/UserApi";
+import { fetchUsers } from "./UserApi.jsx";
 import Pagination from "./Pagination";
 
 function UserListPage() {
@@ -16,9 +16,11 @@ function UserListPage() {
     const [users, setUsers] = useState([]);
     const [page, setPage] = useState(1);
 
+    //lấy danh sách người dùng
     useEffect(() => {
         fetchUsers().then(setUsers);
     }, []);
+
 
     const pageSize = 5;
     const start = (page - 1) * pageSize;
